@@ -1,101 +1,456 @@
-import Image from "next/image";
+'use client'
+
+import About from "./components/About";
+import LogoCarousel from "./components/LogoCarousel";
+import Navbar_Hero from "./components/Navbar_Hero";
+import Head from "next/head";
+import Stages from "./components/Stages";
+import PriceCards from "./components/PriceCards";
+import Testimonials from "./components/Testimonials";
+import Faq from "./components/Faq";
+import Footer from "./components/Footer";
+import SocialShare from "./components/SocialShare";
+import Services_Demo from "./components/Services_Demo";
+import Contact from "./components/Contact";
+import Modals from "./components/Modals";
+import Portofolio from "./components/Portofolio";
+import { useState } from "react";
+import {
+  CursorArrowRaysIcon,
+} from '@heroicons/react/24/outline'
+
+const translations = {
+  ro: {
+    about: "Despre Noi",
+    services: "Servicii",
+    portfolio: "Portofoliu",
+    prices: "Prețuri",
+    requestQuote: "Cere o ofertă",
+    contactUs: "Contactează-ne",
+    products: [
+      { name: "Creare Landing Page", description: "Atrage mai mulți clienți!", id: "landing-page", icon: "/images/material-symbols--sell-outline.png" },
+      { name: "Creare Magazin Online", description: "Vinde inteligent și rapid!", id: "magazin-online", icon: "/images/ep--sell (1).png" },
+      { name: "Creare Site Corporativ", description: "Investește cu încredere!", id: "site-corporativ", icon: "/images/fluent-mdl2--work.png" },
+      { name: "Elaborare Web Design", description: "Fii unic, ieși în evidență!", id: "web-design", icon: "/images/fluent--design-ideas-16-filled.png" },
+      { name: "Marketing Digital", description: "Fii vizibil, crește rapid", id: "marketing-digital", icon: "/images/fluent--arrow-growth-20-filled.png" },
+    ],
+    heroTitle: "Elaborăm",
+    heroTitle2: "site-uri",
+    heroTitle3: "moderne",
+    heroTitle4: "și",
+    heroTitle5: "magazine online",
+    heroTitle6: "care",
+    heroText: "Dezvoltăm site-uri web personalizate, design modern și soluții eficiente de marketing digital care îți cresc vizibilitatea pe online.",
+    stat1: "Proiecte finalizate",
+    stat2: "Designuri create",
+    stat3: "Ore de consultanță",
+    aboutTitle: "DESPRE NOI",
+    aboutSubtitle: "De Ce",
+    aboutSubtitle2: "SkyTech",
+    aboutSubtitle3: "Este Alegerea Potrivită Pentru Tine?",
+    aboutPar: "Suntem lideri pe piață, oferind cele mai mici prețuri pentru crearea de website-uri profesionale. La",
+    aboutPar2: "dezvoltăm site-uri moderne, cu design personalizat și optimizare avansată. Integrăm strategii eficiente de marketing digital pentru a-ți crește vizibilitatea online și vânzările. Alege",
+    aboutPar3: "și beneficiază de un site performant la un preț accesibil!",
+    aboutBtn: "Contactează-ne",
+    serviceTitle: "SERVICIILE NOASTRE",
+    serviceSub: "Descoperă",
+    serviceSub2: "Serviciile",
+    serviceSub3: "Potrivite Pentru Tine",
+    servicePar: "Oferim soluții complete pentru dezvoltarea site-urilor web, design personalizat și marketing digital. Creăm site-uri moderne și magazine online care generează vânzări, iar serviciile noastre de SEO, Google Ads și Facebook Ads îți cresc vizibilitatea online.",
+    landingPar: "Dacă ai o afacere și vrei să atragi mai mulți clienți, un Landing Page este soluția ideală. Iată beneficiile:",
+    landingBen1: "Crește vânzările",
+    landingBen2: "Creșterea vizibilității",
+    landingBen3: "Design modern și profesional",
+    landingBen4: "Prezentare clară a afacerii",
+    landingBen5: "Investiție mică, rezultate mari",
+    landingBen6: "Optimizat pentru orice dispozitiv",
+    landingBtn: "Obține o Ofertă!",
+    ecomTitle: "Magazin Online",
+    ecomPar: "Dacă vrei să atragi clienți din întreaga lume, un magazin online este soluția ideală. Iată beneficiile:",
+    ecomBen1: "Vânzări globale",
+    ecomBen2: "Crește vizibilitatea",
+    ecomBen3: "Design modern și profesional",
+    ecomBen4: "Plăți securizate",
+    ecomBen5: "Optimizat pentru orice dispozitiv",
+    ecomBen6: "Accesibilitate 24/7",
+    corpTitle: "Site Corporativ",
+    corpPar: "Dacă vrei să îți prezinți afacerea într-un mod profesionist, un site corporativ este soluția ideală. Iată avantajele:",
+    corpBen1: "Prezentare detaliată a companiei",
+    corpBen2: "Detalii despre produse și servicii",
+    corpBen3: "Design modern și profesional",
+    corpBen4: "Prezentarea echipei",
+    corpBen5: "Acces rapid la feedback",
+    corpBen6: "Optimizat pentru orice dispozitiv",
+    webTitle: "Web Design",
+    webPar: "Dacă vrei să îți impresionezi vizitatorii, un site cu un design inovativ este esențial. Iată de ce:",
+    webBen1: "Atrage atenția",
+    webBen2: "Design unic",
+    webBen3: "Ușurință în navigare",
+    webBen4: "Experiență utilizator excelentă",
+    webBen5: "Consolidarea imaginii brandului",
+    webBen6: "Îmbunătățirea interacțiunii cu clienții",
+    markTitle: "Marketing Digital",
+    markPar: "Dacă vrei să crești vizibilitatea afacerii tale, marketingul digital este cheia succesului. Iată de ce:",
+    markBen1: "Vânzări mai rapide",
+    markBen2: "Promovare continuă",
+    markBen3: "Targetare precisă",
+    markBen4: "Costuri reduse",
+    markBen5: "Flexibilitate",
+    markBen6: "Acces la date și analize",
+    stageTitle: "ETAPELE DE LUCRU",
+    stageSubtitle: "Etape Esențiale",
+    stageSubtitle2_2: "De la",
+    stageSubtitle2: "Idee",
+    stageSubtitle3: "la",
+    stageSubtitle4: "Lansare",
+    stagePar: "Transformăm ideile în website-uri de succes printr-un proces clar și eficient. Începem cu o consultație inițială, definim strategia potrivită, aprobăm fiecare detaliu și lansăm proiectul. Fiecare pas este gândit pentru a livra rezultate profesionale și performante.",
+    stage1Title: "1. Consultație inițială",
+    stage1Par: "Începem prin a discuta despre",
+    stage1_2Par: "viziunea și obiectivele tale.",
+    stage1_3Par: "Aflăm ce îți dorești pentru",
+    stage1_4Par: "proiectul tău, pentru a înțelege",
+    stage1_5Par: "cum să-l abordăm în mod eficient.",
+    stage2Title: "2. Planificăm strategia",
+    stage2Par: "În această etapă, îți prezentăm",
+    stage2_2Par: "un plan detaliat care include",
+    stage2_3Par: "structura  site-ului,  designul",
+    stage2_4Par: "propus  și termenii de",
+    stage2_5Par: "livrare.",
+    stage3Title: "3. Aprobăm proiectul",
+    stage3Par: "După ce ai revizuit și",
+    stage3_2Par: "aprobat propunerea, inclusiv",
+    stage3_3Par: "detaliile legate de",
+    stage3_4Par: "termeni și buget,",
+    stage3_5Par: "dăm start implementării.",
+    stage4Title: "4. Lansăm proiectul",
+    stage4Par: "După verificarea tuturor",
+    stage4_2Par: "aspectelor,  lansăm site-ul",
+    stage4_3Par: "și îl facem  accesibil pentru",
+    stage4_4Par: "publicul larg, oferind",
+    stage4_5Par: "afacerii tale vizibilitate.",
+    portTitle: "PROIECTELE NOASTRE",
+    portSub: "Explorează cele mai recente",
+    portSub2: "site-uri",
+    portSub3: "realizate",
+    portPar: "Vezi cum transformăm ideile în realitate digitală! Descoperă cum îmbinăm creativitatea cu tehnologia pentru a crea site-uri care fac diferența. Proiectele noastre sunt create pentru a oferi soluții inovative și design de calitate, adaptate nevoilor fiecărui client.",
+    port1Title: "PulseFit – Platformă de fitness inovativă",
+    port1Par: "este landing page-ul unei săli de fitness, oferind informații clare despre antrenamentele disponibile și facilitățile oferite.",
+    port2Title: "Secondy – Magazin online de ceasuri",
+    port2Par: "este o platformă e-commerce dedicată pasionaților de ceasuri, oferind o gamă variată de produse de calitate.",
+    port3Title: "Activ Imobil – Spații comerciale ideale",
+    port3Par: "este un landing page care prezintă compania specializată în închirierea și vânzarea de spații comerciale.",
+    priceTitle: "PREȚURILE NOASTRE",
+    priceSub: "Alege",
+    priceSub2: "Planul",
+    priceSub3: "Care Ți Se Potrivește",
+    pricePar: "Prețurile noastre sunt cele mai mici de pe piață, iar calitatea este la cel mai înalt nivel. La",
+    pricePar2: ", îți oferim soluții web de top la un preț accesibil. Alege acum!",
+    card1Title: "de la",
+    card1Par: "Opțiunea perfectă pentru afaceri ce vor să atragă atenția rapid și eficient.",
+    card1Ben1: "Termen De Realizare: 7 Zile Lucrătoare",
+    card1Ben2: "Adaptabil oricărui dispozitiv",
+    card1Ben3: "Design personalizat",
+    card1Ben4: "Nr. de limbi: 2",
+    card1Ben5: "Integrare cu Google Analytics",
+    card1Ben6: "Hosting Gratuit pe 1 an",
+    card1Ben7: "Optimizare SEO De Bază",
+    card2Ben1: "Termen De Realizare: 10 Zile Lucrătoare",
+    card2Ben2: "Integrare Sistem de Plăți",
+    card2Ben3: "Filtre Standard",
+    card3Ben1: "Termen De Realizare: 12 Zile Lucrătoare",
+    card2Par: "Creăm magazine online moderne, adaptate nevoilor afacerii tale și ușor de administrat.",
+    card3Par: "Creăm site-uri corporative care reflectă în detaliu identitatea afacerii tale.",
+    cardBtn: "Obține Acum!",
+    testTitle: "Testimoniale",
+    testSub1: "Ce spun clienții despre",
+    testSub2: "Serviciile",
+    testSub3: "Noastre ?",
+    testPar: "Descoperă cum serviciile noastre personalizate de creare site-uri web și marketing digital au contribuit la dezvoltarea afacerilor lor. Fiecare părere este o dovadă a angajamentului nostru pentru calitate și satisfacție. Află cum am făcut diferența pentru clienții noștri!",
+    testimonials: [
+      {
+        name: "Alexandru Radu",
+        quote: "Colaborarea cu SkyTech a fost excelentă și a adus un rezultat impresionant. Echipa a înțeles perfect cerințele mele și a livrat la timp. Sunt foarte mulțumit de serviciile lor. Recomand cu încredere!",
+      },
+      {
+        name: "Andrei Lungu",
+        quote: "Serviciile SkyTech au fost rapide, eficiente și profesioniste. Echipa a fost mereu disponibilă și a livrat un site fantastic. Sunt foarte mulțumit de colaborare. Mulțumesc pentru tot! Voi apela din nou cu siguranță în viitor.",
+      },
+      {
+        name: "Mihai Rusu",
+        quote: "Am ales SkyTech pentru abordarea personalizată și rezultatele rapide. Site-ul meu arată uimitor și echipa a fost foarte profesionistă. Îi recomand cu încredere. O colaborare excelentă! Au depășit așteptările mele în fiecare aspect.",
+      },
+    ],
+    faqTitle: "Întrebări Frecvente",
+    faq1Q: "De ce să alegeți SkyTech pentru crearea site-ului dumneavoastră?",
+    faq1A: "SkyTech oferă soluții personalizate, folosind cele mai noi tehnologii pentru a crea site-uri rapide, optimizate SEO și adaptate nevoilor tale. Echipa noastră este dedicată în a-ți oferi un design unic și funcționalități care să sprijine obiectivele afacerii tale.",
+    faq2Q: "Cum pot obține o estimare precisă a costurilor?",
+    faq2A: "Pentru o estimare precisă, avem nevoie de detalii despre tipul site-ului, funcționalitățile dorite și orice cerințe speciale. După evaluarea proiectului, îți vom trimite o ofertă personalizată care include costurile pentru dezvoltare și eventuale servicii suplimentare.",
+    faq3Q: "Pot avea un site în mai multe limbi?",
+    faq3A: "Da, putem implementa versiuni multilingve pentru site-ul tău, astfel încât să atragi clienți din diferite țări.",
+    faq4Q: "Site-ul va fi optimizat pentru dispozitive mobile?",
+    faq4A: "Da, toate site-urile SkyTech sunt complet optimizate pentru dispozitive mobile, asigurând o experiență rapidă și plăcută pentru utilizatori, indiferent de dispozitiv.",
+    contactTitle: "Solicită O Ofertă",
+    contact1: "Nume:",
+    contact2: "Număr de telefon:",
+    contact3: "Indică serviciul de care ai nevoie:",
+    contactBtn: "Transmite!",
+    fotterPar: "Dezvoltăm site-uri web personalizate, design modern și soluții eficiente de marketing digital care atrag clienți.",
+    footerLink1: "Cere o ofertă",
+    footerLink2: "Contacte",
+    footerLink3: "Suport",
+    footerLink4: "Telefonează-ne",
+    footerLink5: "Trimite un Email",
+    copyright: "2025, Toate drepturile rezervate.",
+    contactBtn2: "Trimite",
+    placeholder1: "Introduceți numele",
+    placeholder2: "Numărul de telefon",
+    placeholder3: "ex.: Landing Page",
+    modalsTitle: "Ai nevoie de un site?",
+    modalsSub: "Fii vizibil, atrage clienți și crește vânzările rapid!",
+    modals3: "Serviciul de care aveți nevoie:",
+    contactRes: "Formular expediat cu succes!",
+    contactRes2: "Eroare la expedierea formularului ❌",
+    contactRes3: "Eroare! Încearcă din nou.",
+  },
+  ru: {
+    about: "О нас",
+    services: "Услуги",
+    portfolio: "Портфолио",
+    prices: "Цены",
+    requestQuote: "Запрос цены",
+    contactUs: "Свяжитесь с нами",
+    products: [
+      { name: "Создание Landing Page", description: "Привлекайте больше клиентов!", id: "landing-page" },
+      { name: "Создание Интернет-магазина", description: "Продавайте умно и быстро!", id: "magazin-online" },
+      { name: "Корпоративный сайт", description: "Инвестируйте с уверенностью!", id: "site-corporativ" },
+      { name: "Разработка Web-дизайна", description: "Будьте уникальными, выделяйтесь!", id: "web-design" },
+      { name: "Цифровой маркетинг", description: "Будьте заметны, быстро растите", id: "marketing-digital" },
+    ],
+    heroTitle: "Разрабатываем",
+    heroTitle2: "сайты",
+    heroTitle4: "и",
+    heroTitle5: "интернет-магазины",
+    heroText: "Мы разрабатываем персонализированные веб-сайты, современный дизайн и эффективные цифровые маркетинговые решения",
+    heroText2: "которые повышают вашу онлайн-видимость.",
+    stat1: "Завершенные проекты",
+    stat2: "Созданные проекты",
+    stat3: "Часы приема",
+    aboutTitle: "О НАС",
+    aboutSubtitle: "Почему",
+    aboutSubtitle2: "SkyTech",
+    aboutSubtitle3: "правильный выбор для вас?",
+    aboutPar: "Мы являемся лидерами рынка, предлагая самые низкие цены на создание профессиональных сайтов. В",
+    aboutPar2: "мы разрабатываем современные сайты с индивидуальным дизайном и расширенной оптимизацией. Мы интегрируем эффективные стратегии цифрового маркетинга, чтобы повысить вашу видимость и продажи в Интернете. Выберите",
+    aboutPar3: "и получите высокопроизводительный веб-сайт по доступной цене!",
+    aboutBtn: "Связаться с нами",
+    serviceTitle: "НАШИ УСЛУГИ",
+    serviceSub: "Откройте",
+    serviceSub2: "услуги",
+    serviceSub3: "подходящие для вас",
+    servicePar: "Мы предлагаем комплексные решения для разработки веб-сайтов, индивидуального дизайна и цифрового маркетинга. Мы создаем современные веб-сайты и интернет-магазины, которые генерируют продажи, а наши услуги SEO, Google Ads и Facebook Ads повышают вашу видимость в Интернете.",
+    landingPar: "Если у вас есть бизнес и вы хотите привлечь больше клиентов, целевая страница — идеальное решение. Вот преимущества:",
+    landingBen1: "Увеличение продаж",
+    landingBen2: "Повышение видимости",
+    landingBen3: "Современный и профессиональный дизайн",
+    landingBen4: "Четкое представление бизнеса",
+    landingBen5: "Маленькие инвестиции, большие результаты",
+    landingBen6: "Оптимизирован для любого устройства",
+    landingBtn: "Получите предложение!",
+    ecomTitle: "Интернет-магазин",
+    ecomPar: "Если вы хотите привлечь клиентов со всего мира, интернет-магазин — идеальное решение. Вот преимущества:",
+    ecomBen1: "Глобальные продажи",
+    ecomBen2: "Повысьте видимость",
+    ecomBen3: "Современный и профессиональный дизайн",
+    ecomBen4: "Безопасные платежи",
+    ecomBen5: "Оптимизирован для любого устройства",
+    ecomBen6: "доступность 24/7",
+    corpTitle: "Корпоративный сайт",
+    corpPar: "Если вы хотите профессионально представить свой бизнес, корпоративный сайт — идеальное решение. Вот преимущества:",
+    corpBen1: "Подробная презентация компании",
+    corpBen2: "Подробности о продуктах и ​​услугах",
+    corpBen3: "Современный и профессиональный дизайн",
+    corpBen4: "Презентация команды",
+    corpBen5: "Быстрый доступ к отзывам",
+    corpBen6: "Оптимизирован для любого устройства",
+    webTitle: "Веб-дизайн",
+    webPar: "Если вы хотите произвести впечатление на своих посетителей, вам необходим веб-сайт с инновационным дизайном. Вот почему:",
+    webBen1: "Привлекает внимание",
+    webBen2: "Уникальный дизайн",
+    webBen3: "Простота навигации",
+    webBen4: "Пoтличный пользовательский опыт",
+    webBen5: "Укрепление имиджа бренда",
+    webBen6: "Улучшение взаимодействия с клиентами",
+    markTitle: "Цифровой маркетинг",
+    markPar: "Если вы хотите повысить узнаваемость своего бизнеса, цифровой маркетинг — ключ к успеху. Вот почему:",
+    markBen1: "Быстрые продажи",
+    markBen2: "Постоянное продвижение",
+    markBen3: "Точный таргетинг",
+    markBen4: "Снижение затрат",
+    markBen5: "Гибкость",
+    markBen6: "Доступ к данным и анализу",
+    stageTitle: "ЭТАПЫ РАБОТЫ",
+    stageSubtitle: "Основные этапы От",
+    stageSubtitle2: "идеи",
+    stageSubtitle3: "до",
+    stageSubtitle4: "запуска",
+    stagePar: "Мы превращаем идеи в успешные веб-сайты с помощью четкого и эффективного процесса. Мы начинаем с первичной консультации, определяем правильную стратегию, утверждаем каждую деталь и запускаем проект. Каждый шаг предназначен для достижения профессиональных и высокопроизводительных результатов.",
+    stage1Title: "1. Первичная консультация",
+    stage1Par: "Мы начинаем с обсуждения",
+    stage1_2Par: "ваше видение и цели.",
+    stage1_3Par: "Мы узнаем, чего вы хотите",
+    stage1_4Par: "ваш проект, чтобы понять",
+    stage1_5Par: "как с этим эффективно бороться.",
+    stage2Title: "2. Планируем стратегию",
+    stage2Par: "На этом этапе мы представляем вам",
+    stage2_2Par: "ваше видение и цели.",
+    stage2_3Par: "Мы узнаем, чего вы хотите",
+    stage2_4Par: "ваш проект, чтобы понять",
+    stage2_5Par: "как с этим эффективно бороться.",
+    stage3Title: "3. Yтверждаем проект",
+    stage3Par: "После того, как вы просмотрели и",
+    stage3_2Par: "одобрил это предложение, в том числе",
+    stage3_3Par: "подробности, связанные с",
+    stage3_4Par: "сроки и бюджет,",
+    stage3_5Par: "приступаем к реализации.",
+    stage4Title: "4. Запускаем проект",
+    stage4Par: "После проверки всего",
+    stage4_2Par: "аспекты, мы запускаем сайт",
+    stage4_3Par: "и мы делаем его доступным для",
+    stage4_4Par: "широкой публике, предлагая",
+    stage4_5Par: "видимость вашего бизнеса.",
+    portTitle: "НАШИ ПРОЕКТЫ",
+    portSub: "Изучите последние",
+    portSub2: "созданные",
+    portSub3: "веб-сайты",
+    portPar: "Посмотрите, как мы превращаем идеи в цифровую реальность! Узнайте, как мы сочетаем креативность с технологиями для создания сайтов, которые имеют значение. Наши проекты созданы, чтобы предложить инновационные решения и качественный дизайн, адаптированный к потребностям каждого клиента.",
+    port1Title: "PulseFit – Инновационная фитнес-платформа",
+    port1Par: "это целевая страница фитнес-центра, предоставляющая четкую информацию о доступных тренировках и предлагаемых услугах.",
+    port2Title: "Secondy – Интернет-магазин часов",
+    port2Par: "это платформа электронной коммерции, предназначенная для любителей часов и предлагающая широкий ассортимент качественной продукции.",
+    port3Title: "Activ Imobil – Идеальное коммерческое помещение",
+    port3Par: "это целевая страница, на которой представлена ​​компания, специализирующаяся на аренде и продаже коммерческих площадей.",
+    priceTitle: "НАШИ ЦЕНЫ",
+    priceSub: "Выбирать",
+    priceSub2: "План",
+    priceSub3: "Что вам подходит",
+    pricePar: "Наши цены самые низкие на рынке, а качество на самом высоком уровне. K",
+    pricePar2: ", мы предлагаем вам лучшие веб-решения по доступной цене. Выбирайте сейчас!",
+    card1Title: "от",
+    card1Par: "Идеальный вариант для бизнеса, который хочет быстро и эффективно привлечь внимание.",
+    card1Ben1: "Срок выполнения: 7 рабочих дней",
+    card1Ben2: "Адаптируется к любому устройству",
+    card1Ben3: "Индивидуальный дизайн",
+    card1Ben4: "Количество языков: 2",
+    card1Ben5: "Интеграция с Google Analytics",
+    card1Ben6: "Бесплатный хостинг на 1 год",
+    card1Ben7: "Базовая SEO-оптимизация",
+    card2Ben1: "Срок выполнения: 10 рабочих дней",
+    card2Ben2: "Адаптируется к любому устройству",
+    card2Ben3: "Стандартный фильтр",
+    card3Ben1: "Срок выполнения: 12 рабочих дней",
+    card2Par: "Мы создаем современные интернет-магазины, адаптированные под нужды вашего бизнеса и простые в управлении.",
+    card3Par: "Мы создаем корпоративные сайты, которые детально отражают индивидуальность вашего бизнеса.",
+    cardBtn: "Получите прямо сейчас!",
+    testTitle: "Отзывы",
+    testSub1: "Что говорят клиенты о",
+    testSub2: "Наши",
+    testSub3: "Yслуги ?",
+    testPar: "Узнайте, как наши персонализированные услуги по созданию веб-сайтов и цифровому маркетингу способствовали развитию их бизнеса. Каждое мнение является доказательством нашей приверженности качеству и удовлетворенности. Узнайте, как мы изменили ситуацию для наших клиентов!"
+    ,testimonials: [
+      {
+        name: "Александру Раду",
+        quote: "Сотрудничество со SkyTech было отличным и принесло впечатляющий результат. Команда отлично поняла мои требования и выполнила их в срок. Я очень доволен их услугами. Очень рекомендую!",
+      },
+      {
+        name: "Андрей Лунгу",
+        quote: "Услуги SkyTech были быстрыми, эффективными и профессиональными. Команда всегда была доступна и предоставила фантастический веб-сайт. Я очень доволен сотрудничеством. Спасибо вам за все! Обязательно позвоню еще раз в будущем.",
+      },
+      {
+        name: "Михай Русу",
+        quote: "Я выбрал SkyTech за индивидуальный подход и быстрые результаты. Мой сайт выглядит потрясающе, а команда была очень профессиональной. Рекомендую их с уверенностью. Отличное сотрудничество! Они превзошли мои ожидания во всех аспектах.",
+      },
+    ],
+    faqTitle: "Вопросы и ответы",
+    faq1Q: "Почему стоит выбрать SkyTech для создания сайта?",
+    faq1A: "SkyTech предлагает индивидуальные решения, используя новейшие технологии для создания быстрых, SEO-оптимизированных веб-сайтов, адаптированных к вашим потребностям. Наша команда стремится предоставить вам уникальный дизайн и функциональность, которые соответствуют вашим бизнес-целям.",
+    faq2Q: "Как я могу получить точную смету расходов?",
+    faq2A: "Для точной оценки нам нужна подробная информация о типе сайта, желаемых функциях и любых специальных требованиях. После оценки проекта мы вышлем вам персональное предложение, которое включает в себя затраты на разработку и любые дополнительные услуги.",
+    faq3Q: "Могу ли я иметь сайт более чем на одном языке?",
+    faq3A: "Да, мы можем реализовать мультиязычные версии для вашего сайта, чтобы вы могли привлекать клиентов из разных стран.",
+    faq4Q: "Будет ли сайт оптимизирован для мобильных устройств?",
+    faq4A: "Да, все сайты SkyTech полностью оптимизированы для мобильных устройств, что обеспечивает быструю и приятную работу для пользователей, независимо от устройства.",
+    contactTitle: "Запросить предложение",
+    contact1: "Имя:",
+    contact2: "Номер телефона:",
+    contact3: "Укажите необходимую вам услугу:",
+    contactBtn: "Передавать!",
+    fotterPar: "Мы разрабатываем индивидуальные веб-сайты, современный дизайн и эффективные решения в области цифрового маркетинга, которые привлекают клиентов.",
+    footerLink1: "Запросить предложение",
+    footerLink2: "Контакты",
+    footerLink3: "Поддержка",
+    footerLink4: "Позвоните нам",
+    footerLink5: "Отправить электронное письмо",
+    copyright: "2025, Все права защищены.",
+    contactBtn2: "Отправить",
+    placeholder1: "Введите имя",
+    placeholder2: "Номер телефона",
+    placeholder3: "ex.: Landing Page",
+    modalsTitle: "Вам нужен сайт?",
+    modalsSub: "Будьте заметны, привлекайте клиентов и быстро увеличивайте продажи!",
+    modals3: "Услуга, которая вам нужна:",
+    contactRes: "Форма успешно отправлена!",
+    contactRes2: "Ошибка при отправке формы ❌",
+    contactRes3: "Ошибка! Повторить.",
+  },
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [language, setLanguage] = useState("ro");
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+  };
+
+  return (
+    <>
+      <Head>
+        <title>SkyTech - Creare Site-uri Web Profesionale și Design Personaliza</title>
+        <meta name="description" content="SkyTech dezvoltă site-uri web personalizate, cu design modern și soluții eficiente de marketing digital care generează vânzări și cresc vizibilitatea afacerii tale pe online." />
+        {/* <meta name="robots" content="index, follow" /> */}
+
+        {/* Open Graph for social sharing */}
+        <meta property="og:title" content="SkyTech - Creare Site-uri Web Profesionale" />
+        <meta property="og:description" content="Creăm site-uri rapide, optimizate SEO, și cu un design unic." />
+        {/* <meta property="og:image" content="/images/preview.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://skytech.md" /> */}
+
+        {/* Twitter Card */}
+        {/* <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SkyTech - Creare Site-uri Web" />
+        <meta name="twitter:description" content="Site-uri rapide, optimizate SEO, și design modern." />
+        <meta name="twitter:image" content="/images/preview.jpg" /> */}
+      </Head>
+      
+      
+
+      <main>
+        <Navbar_Hero language={language} 
+          handleLanguageChange={handleLanguageChange}
+          translations={translations} />
+        <LogoCarousel />
+        <About language={language} translations={translations} />
+        <Services_Demo language={language} translations={translations} />
+        <Stages language={language} translations={translations} />
+        <Portofolio language={language} translations={translations} />
+        <PriceCards language={language} translations={translations} />
+        <Testimonials language={language} translations={translations} />
+        <Faq language={language} translations={translations} />
+        <Contact language={language} translations={translations} />
+        <Footer language={language} translations={translations} />
+        <SocialShare />
+        <Modals language={language} translations={translations} />
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
