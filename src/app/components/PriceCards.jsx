@@ -57,7 +57,7 @@ const PriceCards = ({ language, translations }) => {
                 {/* Advanced Plan */}
                 <SmoothReveal><div className="bg-[#111C37] p-8 rounded-xl shadow-lg border border-2 border-[#4491E1] hover:scale-105 transition-transform duration-300 ease-in-out">
                     <h4 className="text-2xl font-semibold">{ecomTitle}</h4>
-                    <p className="text-4xl font-bold mt-4">{card1Title} 700 € <span className="text-2xl font-bold">/</span> <span className="text-2xl text-gray-400 line-through decoration-red-500 decoration-2 font-bold"> 1199.99 €</span></p>
+                    <p className="text-4xl font-bold mt-4">{card1Title} 650 € <span className="text-2xl font-bold">/</span> <span className="text-2xl text-gray-400 line-through decoration-red-500 decoration-2 font-bold"> 1199.99 €</span></p>
                     <p className="mt-4 text-gray-400">
                         {card2Par}
                     </p>

@@ -25,7 +25,7 @@ const Testimonials = ({ language, translations }) => {
           {testimonials.map((item, idx) => (
             <li
               key={idx}
-              className="bg-transparent bg-glass-gradient rounded-xl border shadow-md hover:-translate-y-2 transition-transform duration-300 ease-in-out"
+              className="bg-transparent bg-white rounded-xl border shadow-md hover:-translate-y-2 transition-transform duration-300 ease-in-out"
             >
               <div className="p-4">
                 <svg

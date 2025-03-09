@@ -15,9 +15,7 @@ import Contact from "./components/Contact";
 import Modals from "./components/Modals";
 import Portofolio from "./components/Portofolio";
 import { useState } from "react";
-import {
-  CursorArrowRaysIcon,
-} from '@heroicons/react/24/outline'
+import Stages_Demo from "./components/Stages_Demo";
 
 const translations = {
   ro: {
@@ -104,25 +102,25 @@ const translations = {
     stageSubtitle3: "la",
     stageSubtitle4: "Lansare",
     stagePar: "Transformăm ideile în website-uri de succes printr-un proces clar și eficient. Începem cu o consultație inițială, definim strategia potrivită, aprobăm fiecare detaliu și lansăm proiectul. Fiecare pas este gândit pentru a livra rezultate profesionale și performante.",
-    stage1Title: "1. Consultație inițială",
+    stage1Title: "01. Consultație inițială",
     stage1Par: "Începem prin a discuta despre",
     stage1_2Par: "viziunea și obiectivele tale.",
     stage1_3Par: "Aflăm ce îți dorești pentru",
     stage1_4Par: "proiectul tău, pentru a înțelege",
     stage1_5Par: "cum să-l abordăm în mod eficient.",
-    stage2Title: "2. Planificăm strategia",
+    stage2Title: "02. Planificăm strategia",
     stage2Par: "În această etapă, îți prezentăm",
     stage2_2Par: "un plan detaliat care include",
     stage2_3Par: "structura  site-ului,  designul",
     stage2_4Par: "propus  și termenii de",
     stage2_5Par: "livrare.",
-    stage3Title: "3. Aprobăm proiectul",
+    stage3Title: "03. Aprobăm proiectul",
     stage3Par: "După ce ai revizuit și",
     stage3_2Par: "aprobat propunerea, inclusiv",
     stage3_3Par: "detaliile legate de",
     stage3_4Par: "termeni și buget,",
     stage3_5Par: "dăm start implementării.",
-    stage4Title: "4. Lansăm proiectul",
+    stage4Title: "04. Lansăm proiectul",
     stage4Par: "După verificarea tuturor",
     stage4_2Par: "aspectelor,  lansăm site-ul",
     stage4_3Par: "și îl facem  accesibil pentru",
@@ -220,11 +218,11 @@ const translations = {
     requestQuote: "Запрос цены",
     contactUs: "Свяжитесь с нами",
     products: [
-      { name: "Создание Landing Page", description: "Привлекайте больше клиентов!", id: "landing-page" },
-      { name: "Создание Интернет-магазина", description: "Продавайте умно и быстро!", id: "magazin-online" },
-      { name: "Корпоративный сайт", description: "Инвестируйте с уверенностью!", id: "site-corporativ" },
-      { name: "Разработка Web-дизайна", description: "Будьте уникальными, выделяйтесь!", id: "web-design" },
-      { name: "Цифровой маркетинг", description: "Будьте заметны, быстро растите", id: "marketing-digital" },
+      { name: "Создание Landing Page", description: "Привлекайте больше клиентов!", id: "landing-page", icon: "/images/material-symbols--sell-outline.png" },
+      { name: "Создание Интернет-магазина", description: "Продавайте умно и быстро!", id: "magazin-online", icon: "/images/ep--sell (1).png" },
+      { name: "Корпоративный сайт", description: "Инвестируйте с уверенностью!", id: "site-corporativ", icon: "/images/fluent-mdl2--work.png" },
+      { name: "Разработка Web-дизайна", description: "Будьте уникальными, выделяйтесь!", id: "web-design", icon: "/images/fluent--design-ideas-16-filled.png" },
+      { name: "Цифровой маркетинг", description: "Будьте заметны, быстро растите", id: "marketing-digital", icon: "/images/fluent--arrow-growth-20-filled.png" },
     ],
     heroTitle: "Разрабатываем",
     heroTitle2: "сайты",
@@ -294,25 +292,25 @@ const translations = {
     stageSubtitle3: "до",
     stageSubtitle4: "запуска",
     stagePar: "Мы превращаем идеи в успешные веб-сайты с помощью четкого и эффективного процесса. Мы начинаем с первичной консультации, определяем правильную стратегию, утверждаем каждую деталь и запускаем проект. Каждый шаг предназначен для достижения профессиональных и высокопроизводительных результатов.",
-    stage1Title: "1. Первичная консультация",
+    stage1Title: "01. Первичная консультация",
     stage1Par: "Мы начинаем с обсуждения",
     stage1_2Par: "ваше видение и цели.",
     stage1_3Par: "Мы узнаем, чего вы хотите",
     stage1_4Par: "ваш проект, чтобы понять",
     stage1_5Par: "как с этим эффективно бороться.",
-    stage2Title: "2. Планируем стратегию",
+    stage2Title: "02. Планируем стратегию",
     stage2Par: "На этом этапе мы представляем вам",
     stage2_2Par: "ваше видение и цели.",
     stage2_3Par: "Мы узнаем, чего вы хотите",
     stage2_4Par: "ваш проект, чтобы понять",
     stage2_5Par: "как с этим эффективно бороться.",
-    stage3Title: "3. Yтверждаем проект",
+    stage3Title: "03. Yтверждаем проект",
     stage3Par: "После того, как вы просмотрели и",
     stage3_2Par: "одобрил это предложение, в том числе",
     stage3_3Par: "подробности, связанные с",
     stage3_4Par: "сроки и бюджет,",
     stage3_5Par: "приступаем к реализации.",
-    stage4Title: "4. Запускаем проект",
+    stage4Title: "04. Запускаем проект",
     stage4Par: "После проверки всего",
     stage4_2Par: "аспекты, мы запускаем сайт",
     stage4_3Par: "и мы делаем его доступным для",
@@ -414,8 +412,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>SkyTech - Creare Site-uri Web Profesionale și Design Personaliza</title>
-        <meta name="description" content="SkyTech dezvoltă site-uri web personalizate, cu design modern și soluții eficiente de marketing digital care generează vânzări și cresc vizibilitatea afacerii tale pe online." />
+        <title>SkyTech - Elaborăm site-uri moderne și magazine online care generează vînzări</title>
+        <meta name="description" content="Dezvoltăm site-uri web personalizate, design modern și soluții eficiente de marketing digital care îți cresc vizibilitatea pe online." />
         {/* <meta name="robots" content="index, follow" /> */}
 
         {/* Open Graph for social sharing */}

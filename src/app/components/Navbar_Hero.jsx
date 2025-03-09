@@ -35,7 +35,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
   const pathname = usePathname();
 
   const { about, services, portfolio, prices, requestQuote, contactUs, products, heroTitle, heroTitle2,
-    heroTitle3, heroTitle4, heroTitle5, heroTitle6, heroText, heroText2, stat1, stat2, stat3 } = translations[language];
+    heroTitle3, heroTitle4, heroTitle5, heroTitle6, heroText, heroText2, heroText3, stat1, stat2, stat3 } = translations[language];
 
   const handleScroll = (e, sectionId) => {
     e.preventDefault();
@@ -91,7 +91,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
           </div>
           <PopoverGroup className="hidden lg:flex lg:gap-x-12">
 
-            <Link href="/despre-noi" onClick={(e) => handleScroll(e, 'despre-noi')} className="text-sm/6 relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] 
+            <Link href="/" onClick={(e) => handleScroll(e, 'despre-noi')} className="text-sm/6 relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full font-semibold text-[#F2F9FF]">
               {about}
             </Link>
@@ -114,7 +114,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
                       key={item.name}
                       className="group relative flex items-center gap-x-4 p-4 text-sm hover:bg-[#4491E1] hover:rounded-lg"
                     >
-                      <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 ">
+                      <div key={item.icon} className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 ">
                         <Image src={item.icon} alt='icon' width={30} height={30} />
                       </div>
                       <div className="flex-auto">
@@ -131,11 +131,11 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
               </div>
             </div>
 
-            <Link href="/portofoliu" onClick={(e) => handleScroll(e, 'portofoliu')} className="text-sm/6 relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] 
+            <Link href="/" onClick={(e) => handleScroll(e, 'portofoliu')} className="text-sm/6 relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full  font-semibold text-[#F2F9FF]">
               {portfolio}
             </Link>
-            <Link href="/prices" onClick={(e) => handleScroll(e, 'prices')} className="text-sm/6 relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] 
+            <Link href="/" onClick={(e) => handleScroll(e, 'prices')} className="text-sm/6 relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full font-semibold text-[#F2F9FF]">
               {prices}
             </Link>
@@ -152,7 +152,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
 
           </PopoverGroup>
           <div className="hidden xl:flex lg:flex-1 lg:justify-end gap-4">
-            <Link href="/contact" onClick={(e) => handleScroll(e, 'contact')} className="text-sm/6 transform hover:-translate-y-1 transition duration-400 font-semibold text-[#F2F9FF] px-4 py-2 rounded-lg bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9]">
+            <Link href="/" onClick={(e) => handleScroll(e, 'contact')} className="text-sm/6 transform hover:-translate-y-1 transition duration-400 font-semibold text-[#F2F9FF] px-4 py-2 rounded-lg bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9]">
               {requestQuote}
             </Link>
             <Link href="tel:+37360300553" className="text-sm/6 transform hover:-translate-y-1 transition duration-400 font-semibold border border-[#F2F9FF] px-4 py-2 rounded-lg text-[#F2F9FF] hover:bg-[#F2F9FF] hover:text-[#0E162C] hover:transition hover:duration-200">
@@ -216,13 +216,13 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
                       ))}
                     </DisclosurePanel>
                   </Disclosure>
-                  <Link href="/portofoliu" onClick={(e) => {
+                  <Link href="/" onClick={(e) => {
                     handleScroll(e, 'portofoliu');
                     setMobileMenuOpen(false);
                   }} className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#F2F9FF]">
                     {portfolio}
                   </Link>
-                  <Link href="/prices" onClick={(e) => {
+                  <Link href="/" onClick={(e) => {
                     handleScroll(e, 'prices');
                     setMobileMenuOpen(false);
                   }} className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#F2F9FF]">
@@ -235,9 +235,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
                         setMobileMenuOpen(false);
                       }}
                     >
-                      <Image
-                        width={100}
-                        height={100}
+                      <img
                         className="size-6"
                         src="/images/romania-flag-round-circle-icon.webp"
                         alt="Romanian Flag"
@@ -245,14 +243,23 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
                     </button>
 
                     <div className="w-[1px] h-6 bg-[#E5F2FF]"></div>
-                    <button onClick={() => handleLanguageChange('ru')}>
-                      <Image width={100} height={100} className="size-6" src="/images/russia-flag-round-circle-icon.webp" alt="Russian Flag" />
+                    <button
+                      onClick={() => {
+                        handleLanguageChange('ru');
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      <img
+                        className="size-6"
+                        src="/images/russia-flag-round-circle-icon.webp"
+                        alt="Russian Flag"
+                      />
                     </button>
                   </div>
                 </div>
 
                 <div className='py-6 px-3 flex gap-12'>
-                  <Link href="/contact" className="-mx-3 block hover:-translate-y-1 transition duration-400 rounded-lg text-sm/7 font-semibold text-[#F2F9FF] px-4 py-2 rounded-lg bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9]">
+                  <Link href="/" className="-mx-3 block hover:-translate-y-1 transition duration-400 rounded-lg text-sm/7 font-semibold text-[#F2F9FF] px-4 py-2 rounded-lg bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9]">
                     {requestQuote}
                   </Link>
                   <Link href="tel:+37360300553" className="-mx-3 block hover:-translate-y-1 transition duration-400 rounded-lg text-sm/7 font-semibold border border-[#F2F9FF] px-4 py-2 rounded-lg text-[#F2F9FF]">
@@ -307,8 +314,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
         <div className='hidden w-[1px] h-20 bg-[#E5F2FF] md:flex md:-translate-x-5 md:-translate-y-8 lg:-translate-x-2 lg:h-28 xl:translate-x-2 xl:translate-y-5 xl:h-32'></div>
 
         <div className='flex flex-col justify-between items-center xl:mt-32 gap-8 md:gap-16'>
-          <SmoothReveal><p className='text-[#E5F2FF] py-2 text-base md:translate-y-12 xl:translate-y-5 xl:text-lg xl:pl-10 xl:leading-loose'>{heroText} <br className='xl:hidden' />
-            {heroText2} <span className="hidden xl:inline"></span> {/* <span className="hidden xl:inline">Adaptăm <br /> fiecare proiect  la nevoile și obiectivele afacerii tale</span> */}
+          <SmoothReveal><p className='w-80 lg:w-64 xl:w-[520px] text-[#E5F2FF] py-2 text-base md:translate-y-12 xl:translate-y-5 xl:text-lg xl:pl-10 xl:leading-loose'>{heroText}<span className="hidden xl:inline"></span> {/* <span className="hidden xl:inline">Adaptăm <br /> fiecare proiect  la nevoile și obiectivele afacerii tale</span> */}
           </p></SmoothReveal>
           <div className='flex justify-between items-center gap-4 xl:pl-4'>
             <div>

@@ -26,7 +26,7 @@ const Contact = ({ language, translations }) => {
     });
 
     if (response.ok) {
-      toast.success({ contactRes }, {
+      toast.success("Formular expediat cu succes!", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -36,8 +36,8 @@ const Contact = ({ language, translations }) => {
         theme: "light",
       });
     } else {
-      setStatus({ contactRes2 }); // ✅ Setează mesaj de eroare
-      toast.error({ contactRes3 }, {
+      setStatus("Eroare la expedierea formularului ❌"); // ✅ Setează mesaj de eroare
+      toast.error("Eroare! Încearcă din nou.", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,

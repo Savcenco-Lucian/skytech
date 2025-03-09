@@ -8,8 +8,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "SkyTech - Creare Site-uri Web Profesionale și Design Personalizat",
-  description: "SkyTech dezvoltă site-uri web personalizate, cu design modern și soluții eficiente de marketing digital care generează vânzări și cresc vizibilitatea afacerii tale pe online.",
+  title: "SkyTech - Elaborăm site-uri moderne și magazine online care generează vînzări",
+  description: "Dezvoltăm site-uri web personalizate, design modern și soluții eficiente de marketing digital care îți cresc vizibilitatea pe online.",
 };
 
 
