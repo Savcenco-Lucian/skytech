@@ -411,27 +411,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>SkyTech - Elaborăm site-uri moderne și magazine online care generează vînzări</title>
-        <meta name="description" content="Dezvoltăm site-uri web personalizate, design modern și soluții eficiente de marketing digital care îți cresc vizibilitatea pe online." />
-        {/* <meta name="robots" content="index, follow" /> */}
-
-        {/* Open Graph for social sharing */}
-        <meta property="og:title" content="SkyTech - Creare Site-uri Web Profesionale" />
-        <meta property="og:description" content="Creăm site-uri rapide, optimizate SEO, și cu un design unic." />
-        {/* <meta property="og:image" content="/images/preview.jpg" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://skytech.md" /> */}
-
-        {/* Twitter Card */}
-        {/* <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="SkyTech - Creare Site-uri Web" />
-        <meta name="twitter:description" content="Site-uri rapide, optimizate SEO, și design modern." />
-        <meta name="twitter:image" content="/images/preview.jpg" /> */}
-      </Head>
-      
-      
-
       <main>
         <Navbar_Hero language={language} 
           handleLanguageChange={handleLanguageChange}
