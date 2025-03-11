@@ -24,25 +24,25 @@ const SocialShare = () => {
                         href="tel:+37360300553"
                         className="w-16 h-16 lg:w-18 lg:h-18 bg-[#03E78B] text-white flex items-center justify-center rounded-full shadow-lg transition-transform duration-500"
                     >
-                         <img src="/images/phone-solid.webp" className="w-8 h-8" alt="" />
+                         <img src="/images/phone-solid.webp" className="w-8 h-8" alt="phone" />
                     </a>
                     <a
                         href="https://t.me/skytech1301"
                         className="w-16 h-16 lg:w-18 lg:h-18 bg-[#419fd9] text-white flex items-center justify-center rounded-full shadow-lg transition-transform duration-500"
                     >
-                         <img src="/images/telegram-brands-solid.webp" className="w-10 h-10" alt="" />
+                         <img src="/images/telegram-brands-solid.webp" className="w-10 h-10" alt="telegram" />
                     </a>
                     <a
                         href="viber://chat?number=+37360300553"
                         className="w-16 h-16 lg:w-18 lg:h-18 bg-[#665CAC] text-white flex items-center justify-center rounded-full shadow-lg transition-transform duration-500"
                     >
-                         <img src="/images/viber-brands-solid.webp" className="w-10 h-10" alt="" />
+                         <img src="/images/viber-brands-solid.webp" className="w-10 h-10" alt="viber" />
                     </a>
                     <a
                         href="https://wa.me/+37360300553"
                         className="w-16 h-16 lg:w-18 lg:h-18 bg-[#49E670] text-white flex items-center justify-center rounded-full shadow-lg transition-transform duration-500"
                     >
-                        <img src="/images/whatsapp-brands-solid.svg" className="w-10 h-10" alt="" />
+                        <img src="/images/whatsapp-brands-solid.svg" className="w-10 h-10" alt="whatsapp" />
                     </a>
                 </div>
 

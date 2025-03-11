@@ -43,7 +43,7 @@ const Footer = ({ language, translations }) => {
                     <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8">
                         <div className="col-span-full mb-10 lg:col-span-2 lg:mb-0">
                             <Link href="/" className="flex justify-center w-1/2 md:w-1/4 lg:w-1/2 lg:justify-start">
-                                <img src="/images/Sky-logo.webp" alt="" />
+                                <img src="/images/Sky-logo.webp" alt="skytech logo" />
                             </Link>
                             <p className="py-8 text-base text-[#E5F2FF] lg:max-w-xs lg:text-left">{fotterPar}</p>
                             <Link href="tel:+37360300553" className="py-3 px-5 transform hover:-translate-y-1 transition duration-400 h-11 w-fit bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] rounded-full shadow-sm text-base text-white mx-auto lg:mx-0">

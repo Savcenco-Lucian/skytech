@@ -75,7 +75,7 @@ const Services_Demo = ({ language, translations }) => {
 
                         <div className='flex gap-3'>
                             <Link href="/contact" onClick={(e) => handleScroll(e, 'contact')} className='text-base bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] bg-clip-text text-transparent font-semibold xl:text-lg'>{landingBtn} </Link>
-                            <img src="/images/arrow-right.svg" alt="" />
+                            <img src="/images/arrow-right.svg" alt="arrow-right" />
                         </div>
                     </details>
                     <div className='mt-4 w-full bg-[#A7B2CE] h-0.5'></div>
@@ -104,7 +104,7 @@ const Services_Demo = ({ language, translations }) => {
                         </div>
                         <div className='flex gap-3'>
                             <Link href="/contact" onClick={(e) => handleScroll(e, 'contact')} className='text-base bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] bg-clip-text text-transparent font-semibold xl:text-lg'>{landingBtn} </Link>
-                            <img src="/images/arrow-right.svg" alt="" />
+                            <img src="/images/arrow-right.svg" alt="arrow-right" />
                         </div>
                     </details>
                     <div className='mt-4 w-full bg-[#A7B2CE] h-0.5'></div>
@@ -133,7 +133,7 @@ const Services_Demo = ({ language, translations }) => {
                         </div>
                         <div className='flex gap-3'>
                             <Link href="/contact" onClick={(e) => handleScroll(e, 'contact')} className='text-base bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] bg-clip-text text-transparent font-semibold xl:text-lg'>{landingBtn} </Link>
-                            <img src="/images/arrow-right.svg" alt="" />
+                            <img src="/images/arrow-right.svg" alt="arrow-right" />
                         </div>
                     </details>
                     <div className='mt-4 w-full bg-[#A7B2CE] h-0.5'></div>
@@ -162,7 +162,7 @@ const Services_Demo = ({ language, translations }) => {
                         </div>
                         <div className='flex gap-3'>
                             <Link href="/contact" onClick={(e) => handleScroll(e, 'contact')} className='text-base bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] bg-clip-text text-transparent font-semibold xl:text-lg'>{landingBtn} </Link>
-                            <img src="/images/arrow-right.svg" alt="" />
+                            <img src="/images/arrow-right.svg" alt="arrow-right" />
                         </div>
                     </details>
                     <div className='mt-4 w-full bg-[#A7B2CE] h-0.5'></div>
@@ -191,7 +191,7 @@ const Services_Demo = ({ language, translations }) => {
                         </div>
                         <div className='flex gap-3'>
                             <Link href="/contact" onClick={(e) => handleScroll(e, 'contact')} className='text-base bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] bg-clip-text text-transparent font-semibold xl:text-lg'>{landingBtn} </Link>
-                            <img src="/images/arrow-right.svg" alt="" />
+                            <img src="/images/arrow-right.svg" alt="arrow-right" />
                         </div>
                     </details>
                     <div className='mt-4 w-full bg-[#A7B2CE] h-0.5'></div>

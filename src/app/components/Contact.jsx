@@ -59,7 +59,7 @@ const Contact = ({ language, translations }) => {
                 <Image width={600}
                   height={505}
                   src="/images/contact-img.webp"
-                  alt="ContactUs tailwind section"
+                  alt="Contact us"
                   className="hidden md:flex w-full h-[505px] lg:rounded-l-2xl rounded-lg bg-blend-multiply bg-indigo-700 object-cover"
                 />
               </div>

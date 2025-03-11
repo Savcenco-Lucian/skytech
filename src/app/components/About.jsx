@@ -10,7 +10,7 @@ const About = ({ language, translations }) => {
   return (
     <section id='despre-noi' className='bg-[#F2F9FF] flex flex-col-reverse justify-between items-center px-7 py-20 xl:flex-row lg:px-20 xl:pt-20'>
       <div className=''>
-        <img className='w-[100%] xl:w-[90%] h-auto rounded-2xl' src="/images/about_img.webp" alt="" />
+        <img className='w-[100%] xl:w-[90%] h-auto rounded-2xl' src="/images/about_img.webp" alt="about us" />
       </div>
       <div className='flex flex-col gap-4 py-7'>
         <h3 className='font-medium text-[#0A0D31] text-lg lg:text-xl'>{aboutTitle}</h3>
@@ -18,7 +18,7 @@ const About = ({ language, translations }) => {
         <SmoothReveal><p className='py-4 text-[#383C5A] text-base xl:text-lg'>{aboutPar} <span className='bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] bg-clip-text text-transparent font-medium'>{aboutSubtitle2} </span>, {aboutPar2} <span className='bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] bg-clip-text text-transparent font-medium'>SkyTech </span> {aboutPar3}</p></SmoothReveal>
         <div className='flex gap-3'>
             <Link href="tel:+37360300553" className='text-base bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] bg-clip-text text-transparent font-semibold xl:text-lg'>{aboutBtn} </Link>
-            <img src="/images/arrow-right.svg" alt="" />
+            <img src="/images/arrow-right.svg" alt="arrow icon" />
         </div>
       </div>
     </section>

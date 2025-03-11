@@ -67,7 +67,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Image
-                alt=""
+                alt="skytech logo"
                 src="/images/Sky-logo.webp"  // Ensure your logo is inside the /public/images/ folder
                 className="h-8 w-auto" width={100} // Set an appropriate width
                 height={40} // Set an appropriate height
@@ -152,7 +152,9 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
 
           </PopoverGroup>
           <div className="hidden xl:flex lg:flex-1 lg:justify-end gap-4">
-            <Link href="/" onClick={(e) => handleScroll(e, 'contact')} className="text-sm/6 transform hover:-translate-y-1 transition duration-400 font-semibold text-[#F2F9FF] px-4 py-2 rounded-lg bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9]">
+            <Link href="/contact" onClick={(e) => {
+                    handleScroll(e, 'contact');
+                    setMobileMenuOpen(false);}} className="text-sm/6 transform hover:-translate-y-1 transition duration-400 font-semibold text-[#F2F9FF] px-4 py-2 rounded-lg bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9]">
               {requestQuote}
             </Link>
             <Link href="tel:+37360300553" className="text-sm/6 transform hover:-translate-y-1 transition duration-400 font-semibold border border-[#F2F9FF] px-4 py-2 rounded-lg text-[#F2F9FF] hover:bg-[#F2F9FF] hover:text-[#0E162C] hover:transition hover:duration-200">
@@ -168,7 +170,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
               <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <Image
-                  alt=""
+                  alt="skytech logo"
                   src="/images/Sky-logo.webp"  // Ensure your logo is inside the /public/images/ folder
                   className="h-8 w-auto" width={100} // Set an appropriate width
                   height={40} // Set an appropriate height
@@ -259,7 +261,9 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
                 </div>
 
                 <div className='py-6 px-3 flex gap-12'>
-                  <Link href="/" className="-mx-3 block hover:-translate-y-1 transition duration-400 rounded-lg text-sm/7 font-semibold text-[#F2F9FF] px-4 py-2 rounded-lg bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9]">
+                  <Link href="/contact" onClick={(e) => {
+                    handleScroll(e, 'contact');
+                    setMobileMenuOpen(false);}} className="-mx-3 block hover:-translate-y-1 transition duration-400 rounded-lg text-sm/7 font-semibold text-[#F2F9FF] px-4 py-2 rounded-lg bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9]">
                     {requestQuote}
                   </Link>
                   <Link href="tel:+37360300553" className="-mx-3 block hover:-translate-y-1 transition duration-400 rounded-lg text-sm/7 font-semibold border border-[#F2F9FF] px-4 py-2 rounded-lg text-[#F2F9FF]">
@@ -313,8 +317,8 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
 
         <div className='hidden w-[1px] h-20 bg-[#E5F2FF] md:flex md:-translate-x-5 md:-translate-y-8 lg:-translate-x-2 lg:h-28 xl:translate-x-2 xl:translate-y-5 xl:h-32'></div>
 
-        <div className='flex flex-col justify-between items-center xl:mt-32 gap-8 md:gap-16'>
-          <SmoothReveal><p className='w-80 pl-0 lg:w-64 xl:w-[520px] text-[#E5F2FF] py-2 text-base md:translate-y-12 xl:translate-y-5 xl:text-lg xl:pl-10 xl:leading-loose'>{heroText}<span className="hidden xl:inline"></span> {/* <span className="hidden xl:inline">Adaptăm <br /> fiecare proiect  la nevoile și obiectivele afacerii tale</span> */}
+        <div className='flex flex-col justify-between xl:items-center xl:mt-32 gap-8 md:gap-16'>
+          <SmoothReveal><p className='w-80 lg:w-64 xl:w-[520px] text-[#E5F2FF] py-2 text-base md:translate-y-12 xl:translate-y-5 xl:text-lg xl:pl-10 xl:leading-loose'>{heroText}<span className="hidden xl:inline"></span> {/* <span className="hidden xl:inline">Adaptăm <br /> fiecare proiect  la nevoile și obiectivele afacerii tale</span> */}
           </p></SmoothReveal>
           <div className='flex justify-between items-center gap-4 xl:pl-4'>
             <div>
@@ -334,7 +338,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
       </div>
 
       <div className='flex justify-center items-center px-7 lg:px-20'>
-        <Image width={1200} height={600} className='w-full h-[200px] translate-y-12 lg:translate-y-12 xl:translate-y-24 md:h-[300px] lg:h-[500px] object-cover rounded-2xl md:rounded-3xl' src="/images/hero_img.webp" alt="" />
+        <Image width={1200} height={600} className='w-full h-[200px] translate-y-12 lg:translate-y-12 xl:translate-y-24 md:h-[300px] lg:h-[500px] object-cover rounded-2xl md:rounded-3xl' src="/images/hero_img.webp" alt="hero image" />
       </div>
     </div>
   )

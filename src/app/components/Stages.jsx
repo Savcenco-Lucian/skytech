@@ -27,25 +27,25 @@ const Stages = ({ language, translations }) => {
 
             <div className='flex justify-center md:justify-between items-center gap-12 py-7 flex-wrap'>
                 <div className='flex justify-center md:justify-between items-center flex-col'>
-                    <div className="border border-white shadow-md rounded-full p-4 bg-white"><img className='mt-1' src="/images/client.webp" alt="" /></div>
+                    <div className="border border-white shadow-md rounded-full p-4 bg-white"><img className='mt-1' src="/images/client.webp" alt="message" /></div>
                     <SmoothReveal><h3 className='font-bold text-xl text-[#0A0D31] mt-6'>{stage1Title}</h3></SmoothReveal>
                     <SmoothReveal><p className='text-base ml-9 mt-3'>{stage1Par} <br /> {stage1_2Par} <br />
                         {stage1_3Par} <br /> {stage1_4Par} <br /> {stage1_5Par}</p></SmoothReveal>
                 </div>
                 
                 <div className='flex justify-center md:justify-between items-center flex-col'>
-                    <div className="border border-white shadow-md rounded-full p-4 bg-white"><img src="/images/developing.webp" alt="" /></div>
+                    <div className="border border-white shadow-md rounded-full p-4 bg-white"><img src="/images/developing.webp" alt="strategy" /></div>
                     <SmoothReveal><h3 className='font-bold text-xl text-[#0A0D31] mt-6'>{stage2Title}</h3></SmoothReveal>
                     <SmoothReveal><p className='text-base ml-9 mt-3'>{stage2Par}  <br />{stage2_2Par}  <br /> {stage2_3Par} <br /> {stage2_4Par} <br /> {stage2_5Par}</p></SmoothReveal>
                 </div>
                 <div className='flex justify-center md:justify-between items-center flex-col'>
-                    <div className="border border-white shadow-md rounded-full p-4 bg-white"><img className='ml-2' src="/images/contract.webp" alt="" /></div>
+                    <div className="border border-white shadow-md rounded-full p-4 bg-white"><img className='ml-2' src="/images/contract.webp" alt="deal" /></div>
                     <SmoothReveal><h3 className='font-bold text-xl text-[#0A0D31] mt-6'>{stage3Title}</h3></SmoothReveal>
                     <SmoothReveal><p className='text-base ml-9 mt-3'>{stage3Par} <br /> {stage3_2Par} <br /> {stage3_3Par} <br /> {stage3_4Par}
                         <br />{stage3_5Par}</p></SmoothReveal>
                 </div>
                 <div className='flex justify-center md:justify-between items-center flex-col'>
-                    <div className="border border-white shadow-md rounded-full p-4 bg-white"><img src="/images/launch.webp" alt="" /></div>
+                    <div className="border border-white shadow-md rounded-full p-4 bg-white"><img src="/images/launch.webp" alt="launch" /></div>
                     <SmoothReveal><h3 className='font-bold text-xl text-[#0A0D3] mt-6'>{stage4Title}</h3></SmoothReveal>
                     <SmoothReveal><p className='text-base ml-9 mt-3'>{stage4Par} <br /> {stage4_2Par} <br /> {stage4_3Par} <br /> {stage4_4Par} <br /> {stage4_5Par}</p></SmoothReveal>
                 </div>
