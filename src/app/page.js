@@ -417,14 +417,14 @@ export default function Home() {
         <meta name="robots" content="index, follow" />
         <meta name="author" content="SkyTech" />
         <link rel="icon" href="/images/favicon.ico" />
-        <link rel="canonical" href="https://skytech.md" />
+        <link rel="canonical" href="https://www.skytech.md" />
 
         <meta name="google-site-verification" content="W9c3RNlo5LJDfBQ_zePniJBH4ep3zk3h1IOrz_WR1bI" />
         
         {/* Open Graph */}
         <meta property="og:title" content="SkyTech - Creare site-uri web și magazine online care cresc vizibilitatea afacerii tale" />
         <meta property="og:description" content="Oferim soluții personalizate de creare site-uri web și magazine online, optimizate SEO, care îți cresc vizibilitatea online și îți ajută afacerea să atragă mai mulți clienți." />
-        <meta property="og:url" content="https://skytech.md" />
+        <meta property="og:url" content="https://www.skytech.md" />
         <meta property="og:image" content="/images/Sky-logo.webp" />
         <meta property="og:type" content="website" />
         
