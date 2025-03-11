@@ -314,7 +314,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
         <div className='hidden w-[1px] h-20 bg-[#E5F2FF] md:flex md:-translate-x-5 md:-translate-y-8 lg:-translate-x-2 lg:h-28 xl:translate-x-2 xl:translate-y-5 xl:h-32'></div>
 
         <div className='flex flex-col justify-between items-center xl:mt-32 gap-8 md:gap-16'>
-          <SmoothReveal><p className='w-80 lg:w-64 xl:w-[520px] text-[#E5F2FF] py-2 text-base md:translate-y-12 xl:translate-y-5 xl:text-lg xl:pl-10 xl:leading-loose'>{heroText}<span className="hidden xl:inline"></span> {/* <span className="hidden xl:inline">Adaptăm <br /> fiecare proiect  la nevoile și obiectivele afacerii tale</span> */}
+          <SmoothReveal><p className='w-80 pl-0 lg:w-64 xl:w-[520px] text-[#E5F2FF] py-2 text-base md:translate-y-12 xl:translate-y-5 xl:text-lg xl:pl-10 xl:leading-loose'>{heroText}<span className="hidden xl:inline"></span> {/* <span className="hidden xl:inline">Adaptăm <br /> fiecare proiect  la nevoile și obiectivele afacerii tale</span> */}
           </p></SmoothReveal>
           <div className='flex justify-between items-center gap-4 xl:pl-4'>
             <div>
