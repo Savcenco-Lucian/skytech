@@ -411,9 +411,9 @@ export default function Home() {
   return (
     <>
     <Head>
-        <title>SkyTech - Elaborăm site-uri moderne și magazine online care generează vînzări</title>
+        <title>SkyTech - Elaborăm site-uri și magazine online moderne</title>
         <meta name="description" content="Dezvoltăm site-uri web personalizate, design modern și soluții eficiente de marketing digital care îți cresc vizibilitatea pe online." />
-        <meta name="keywords" content="creare site-uri, site web, design moldova, SEO, google ads, landing page, magazin online, site moldova, site chisinau, creare site" />
+        <meta name="keywords" content="creare site-uri, skytech, skytech moldova, skytech md, creare landing page , landing page moldova, magazin online moldova, site moldova, site chisinau, creare site moldova" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="SkyTech" />
         <link rel="icon" href="/images/favicon.ico" />
@@ -422,7 +422,7 @@ export default function Home() {
         <meta name="google-site-verification" content="W9c3RNlo5LJDfBQ_zePniJBH4ep3zk3h1IOrz_WR1bI" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="SkyTech - Creare site-uri web și magazine online care cresc vizibilitatea afacerii tale" />
+        <meta property="og:title" content="SkyTech - Elaborăm site-uri și magazine online moderne" />
         <meta property="og:description" content="Oferim soluții personalizate de creare site-uri web și magazine online, optimizate SEO, care îți cresc vizibilitatea online și îți ajută afacerea să atragă mai mulți clienți." />
         <meta property="og:url" content="https://www.skytech.md" />
         <meta property="og:image" content="/images/Sky-logo.webp" />
@@ -430,7 +430,7 @@ export default function Home() {
         
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="SkyTech - Creare Site-uri Web" />
+        <meta name="twitter:title" content="SkyTech - Elaborăm site-uri și magazine online moderne" />
         <meta name="twitter:description" content="Site-uri rapide, optimizate SEO, și design modern." />
         <meta name="twitter:image" content="/images/Sky-logo.webp" />
       </Head>
