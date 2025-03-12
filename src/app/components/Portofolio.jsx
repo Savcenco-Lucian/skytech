@@ -3,7 +3,7 @@ import SmoothReveal from './SmoothReveal';
 
 const Portofolio = ({ language, translations }) => {
 
-    const { portTitle, portSub, portSub2, portSub3, portPar,
+    const { portTitle, portSub, portSub1, portSub2, portSub3, portPar,
     port1Title, port1Par, port2Title, port2Par, port3Title, port3Par,
         } = translations[language];
 
@@ -12,7 +12,7 @@ const Portofolio = ({ language, translations }) => {
             <div className='flex flex-col justify-between xl:items-center xl:flex-row'>
                 <div className='flex flex-col gap-4 py-7'>
                     <h3 className='font-medium text-[#0A0D31] text-lg lg:text-xl'>{portTitle}</h3>
-                    <SmoothReveal><h2 className='text-[#0A0D31] font-bold text-3xl leading-[45px] xl:text-5xl xl:leading-[65px]'>{portSub} <span className='bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] bg-clip-text text-transparent'>{portSub2} </span> {portSub3}</h2></SmoothReveal>
+                    <SmoothReveal><h2 className='text-[#0A0D31] font-bold text-3xl leading-[45px] xl:text-5xl xl:leading-[65px]'>{portSub} {portSub1} <span className='bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] bg-clip-text text-transparent'>{portSub2} </span> {portSub3}</h2></SmoothReveal>
                 </div>
                 <div className=''>
                     <SmoothReveal><p className='xl:w-[650px] text-[#383C5A] text-base xl:text-lg'>{portPar}
