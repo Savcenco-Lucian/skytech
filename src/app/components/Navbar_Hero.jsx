@@ -152,7 +152,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
 
           </PopoverGroup>
           <div className="hidden xl:flex lg:flex-1 lg:justify-end gap-4">
-            <Link href="/contact" onClick={(e) => {
+            <Link href="/" onClick={(e) => {
                     handleScroll(e, 'contact');
                     setMobileMenuOpen(false);}} className="text-sm/6 transform hover:-translate-y-1 transition duration-400 font-semibold text-[#F2F9FF] px-4 py-2 rounded-lg bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9]">
               {requestQuote}
@@ -188,7 +188,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  <Link href="/despre-noi" onClick={(e) => {
+                  <Link href="/" onClick={(e) => {
                     handleScroll(e, 'despre-noi');
                     setMobileMenuOpen(false);
                   }}
@@ -261,7 +261,7 @@ const Navbar_Hero = ({ language, handleLanguageChange, translations }) => {
                 </div>
 
                 <div className='py-6 px-3 flex gap-12'>
-                  <Link href="/contact" onClick={(e) => {
+                  <Link href="/" onClick={(e) => {
                     handleScroll(e, 'contact');
                     setMobileMenuOpen(false);}} className="-mx-3 block hover:-translate-y-1 transition duration-400 rounded-lg text-sm/7 font-semibold text-[#F2F9FF] px-4 py-2 rounded-lg bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9]">
                     {requestQuote}

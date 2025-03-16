@@ -47,7 +47,7 @@ const PriceCards = ({ language, translations }) => {
                         <li><span className="text-[#4491E1]">✔</span> {card1Ben6}</li>
                         <li><span className="text-[#4491E1]">✔</span> {card1Ben7}</li>
                     </ul>
-                    <Link href="/contact">
+                    <Link href="/">
                         <button onClick={(e) => handleScroll(e, 'contact')} className="mt-6 w-full font-bold py-3 transform hover:-translate-y-1 transition duration-400 bg-transparent border border-gray-400 text-white rounded-lg hover:bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] transition">
                             {cardBtn}
                         </button>
@@ -72,7 +72,7 @@ const PriceCards = ({ language, translations }) => {
                         <li><span className="text-[#4491E1]">✔</span> {card1Ben6}</li>
                         <li><span className="text-[#4491E1]">✔</span> {card1Ben7}</li>
                     </ul>
-                    <Link href="/contact">
+                    <Link href="/">
                         <button onClick={(e) => handleScroll(e, 'contact')} className="mt-6 w-full font-bold py-3 bg-transparent transform hover:-translate-y-1 transition duration-400 border border-gray-400 text-white rounded-lg hover:bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] transition">
                             {cardBtn}
                         </button>
@@ -95,7 +95,7 @@ const PriceCards = ({ language, translations }) => {
                         <li><span className="text-[#4491E1]">✔</span> {card1Ben6}</li>
                         <li><span className="text-[#4491E1]">✔</span> {card1Ben7}</li>
                     </ul>
-                    <Link href="/contact">
+                    <Link href="/">
                         <button onClick={(e) => handleScroll(e, 'contact')} className="mt-6 w-full font-bold py-3 bg-transparent transform hover:-translate-y-1 transition duration-400 border border-gray-400 text-white rounded-lg hover:bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] transition">
                             {cardBtn}
                         </button>

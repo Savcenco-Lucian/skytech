@@ -53,37 +53,37 @@ const Footer = ({ language, translations }) => {
                         <div className="lg:mx-auto text-left ">
                             <h4 className="text-lg text-[#E5F2FF] font-bold mb-6">SkyTech</h4>
                             <ul className="text-base  transition-all duration-500">
-                                <li className="mb-6"><Link href="/despre-noi" onClick={(e) => handleScroll(e, 'despre-noi')}  className="text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
+                                <li className="mb-6"><Link href="/" onClick={(e) => handleScroll(e, 'despre-noi')}  className="text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5F2FF]">{about}</Link></li>
-                                <li className="mb-6"><Link href="/services" onClick={(e) => handleScroll(e, 'services')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
+                                <li className="mb-6"><Link href="/" onClick={(e) => handleScroll(e, 'services')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5F2FF]">{services}</Link></li>
-                                <li className="mb-6"><Link href="/portofoliu" onClick={(e) => handleScroll(e, 'portofoliu')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
+                                <li className="mb-6"><Link href="/" onClick={(e) => handleScroll(e, 'portofoliu')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5F2FF]">{portfolio}</Link></li>
-                                <li><Link href="/prices" onClick={(e) => handleScroll(e, 'prices')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
+                                <li><Link href="/" onClick={(e) => handleScroll(e, 'prices')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5F2FF]">{prices}</Link></li>
                             </ul>
                         </div>
                         <div className="lg:mx-auto text-left ">
                             <h4 className="text-lg text-[#E5F2FF] font-bold mb-6">{services}</h4>
                             <ul className="text-base  transition-all duration-500">
-                                <li className="mb-6"><Link href="/landing-page" onClick={(e) => handleScroll(e, 'landing-page')} className="text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
+                                <li className="mb-6"><Link href="/" onClick={(e) => handleScroll(e, 'landing-page')} className="text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5F2FF]">Landing Page</Link></li>
-                                <li className="mb-6"><Link href="/magazin-online" onClick={(e) => handleScroll(e, 'magazin-online')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
+                                <li className="mb-6"><Link href="/" onClick={(e) => handleScroll(e, 'magazin-online')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5F2FF]">{ecomTitle}</Link></li>
-                                <li className="mb-6"><Link href="/site-corporativ" onClick={(e) => handleScroll(e, 'site-corporativ')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
+                                <li className="mb-6"><Link href="/" onClick={(e) => handleScroll(e, 'site-corporativ')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5F2FF]">{corpTitle}</Link></li>
-                                <li className="mb-6"><Link href="/web-design" onClick={(e) => handleScroll(e, 'web-design')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
+                                <li className="mb-6"><Link href="/" onClick={(e) => handleScroll(e, 'web-design')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5F2FF]">{webTitle}</Link></li>
-                                <li><Link href="/marketing-digital" onClick={(e) => handleScroll(e, 'marketing-digital')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
+                                <li><Link href="/" onClick={(e) => handleScroll(e, 'marketing-digital')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5F2FF]">{markTitle}</Link></li>
                             </ul>
                         </div>
                         <div className="lg:mx-auto text-left">
                             <h4 className="text-lg text-[#E5F2FF] font-bold mb-6">{footerLink3}</h4>
                             <ul className="text-base  transition-all duration-500">
-                                <li className="mb-6"><Link href="/faq" onClick={(e) => handleScroll(e, 'faq')} className="text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
+                                <li className="mb-6"><Link href="/" onClick={(e) => handleScroll(e, 'faq')} className="text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5F2FF]">FAQ</Link></li>
-                                <li className="mb-6"><Link href="/contact" onClick={(e) => handleScroll(e, 'contact')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
+                                <li className="mb-6"><Link href="/" onClick={(e) => handleScroll(e, 'contact')} className=" text-[#E5F2FF] relative after:content-[''] after:absolute after:left-0 after:bottom-[-7px] after:w-0 after:h-[2px] 
     after:bg-gradient-to-r after:from-[#4491E1] after:via-[#4491E1] after:to-[#5D72D9] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5F2FF]">{footerLink1}</Link></li>
                             </ul>
                         </div>
@@ -111,7 +111,7 @@ const Footer = ({ language, translations }) => {
                     </div>
                     <div className="py-7 border-t border-gray-200">
                         <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
-                            <span className="text-sm text-[#E5F2FF] ">©<a href="https://pagedone.io/">SkyTech</a> {copyright}</span>
+                            <span className="text-sm text-[#E5F2FF] ">©<a href="/">SkyTech</a> {copyright}</span>
                             <div className="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
                                 <Link href="https://www.instagram.com/skytech.moldova/" className="w-9 h-9 hover:-translate-y-1 transition duration-400 rounded-full bg-transparent border border-[#F2F9FF] flex justify-center items-center hover:bg-gradient-to-r from-[#4491E1] via-[#4491E1] to-[#5D72D9] transition">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24"><path fill="#F2F9FF" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" /></svg>
